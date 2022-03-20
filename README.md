@@ -1,7 +1,7 @@
 # Board-Game-Assignment1
 ## Running the code
 **2 options:** <br/>
-1) Download all 3 files. Open the command-line interface and change the directory where those files are located. Then run the the `main.py` file.
+1) Download all 3 files. Open the command-line interface and change the directory where these files are located. Then run the the `main.py` file.
 
 **For Windows, Linix and Mac:** <br/>
 run `python main.py` in a console<br/>
