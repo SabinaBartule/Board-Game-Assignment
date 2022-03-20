@@ -1,11 +1,4 @@
 
-# to be implemented:
-# - human player-->input() Done-Sabina
-# - Sabina: i also did small changes in board
-# - AI player --> player function DONE :) - Felipe
-# - time spended by AI player to compute a move -->Evaluation time:  -  Done - Sabina
-# - Amount of turns required to win - Done - Sabina
-
 import game
 import numpy as np
 import player as p
