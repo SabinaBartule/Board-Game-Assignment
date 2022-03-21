@@ -29,8 +29,6 @@ game.print_board(state)
 # - P2: random actions
 
 while True:
-    # we initialize these values at the beginning of each iteration
-
     repeat = True
     while repeat:
         #Player 1 turn
@@ -69,7 +67,6 @@ while True:
     # flip the board from a player 2 perspective:
     fliped = game.flip_board(new_state)    
     
-    # we initialize these values at the beginning of each iteration
 
     repeat = True
     while repeat:
