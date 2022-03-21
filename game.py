@@ -29,7 +29,7 @@ def initialize_game():
 def set_player1():
     while True:
         os_name = platform.system()
-        #print(os_name)
+       
         if os_name == "Windows":
             os.system('cls')
         else:
@@ -51,7 +51,7 @@ def set_player1():
 def set_player2():
     while True:
         os_name = platform.system()
-        #print(os_name)
+        
         if os_name == "Windows":
             os.system('cls')
         else:
@@ -72,7 +72,7 @@ def set_player2():
 def set_depth():
     while True:
         os_name = platform.system()
-        #print(os_name)
+        
         if os_name == "Windows":
             os.system('cls')
         else:
@@ -123,15 +123,11 @@ def update_state(state, action):
                 last_position = [0, -(i - (state.shape[1] - action-1)) % state.shape[1]]
             
             n -= 1 # substract 1 to the counter
-        # if last_position == False:
-        #         print('HEEERRRREEEEE!!!!')
-        #         print('state', state)
-        #         print('new state', new_state)
     
     return new_state, last_position
 
 def is_final(state):
-    # we have to define the goal states
+    # the goal states
     final_state = [0,0,0,0,0,0]
     if np.array_equal(state[0,1:7], final_state) or np.array_equal(state[1,0:6],final_state):
         state[0,0] += np.sum(state[0,1:7])
@@ -144,7 +140,7 @@ def is_final(state):
         return state, False
 
 def is_valid(state, action):
-    #we need to define when a move is valid
+    #when a move is valid
     if state[1,action] !=0 and action < 6: #an action can't be performed on an empty hole or greater than 5
         return True
     else:
