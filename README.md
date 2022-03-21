@@ -1,4 +1,4 @@
-# Board-Game-Assignment1
+# Board-Game-Assignment
 ## Running the code
 **2 options:** <br/>
 
