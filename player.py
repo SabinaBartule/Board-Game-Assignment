@@ -72,40 +72,9 @@ def plan_a_turn(state, action): #expand the tree
             
     return new_state
 
-# we'll use the AI for the player 2 as default. 
-# If the user select the AI as a Player 1, then we 
-# use the same function to choose an action.
-
 def alphabeta(state, depth, isMaxPlayer, alpha, beta):
     
 # Based on Minimax algorithm with alpha-beta pruning evaluating the tree at depth "d" as maximum.
-# As we noticed in the Pseudocode, we implement a recursive function (functional programming)
-# to choose the best action given by the better v-value.
-
-#   Pseudocode:
-#__________________________________________________________________
-
-# function alphabeta(node, depth, α, β, maximizingPlayer) is
-    # if depth = 0 or node is a terminal node then
-    #     return the heuristic value of node
-    # if maximizingPlayer then
-    #     value := −∞
-    #     for each child of node do
-    #         value := max(value, alphabeta(child, depth − 1, α, β, FALSE))
-    #         if value ≥ β then
-    #             break (* β cutoff *)
-    #         α := max(α, value)
-    #     return value
-    # else
-    #     value := +∞
-    #     for each child of node do
-    #         value := min(value, alphabeta(child, depth − 1, α, β, TRUE))
-    #         if value ≤ α then
-    #             break (* α cutoff *)
-    #         β := min(β, value)
-    #     return value
-#__________________________________________________________________
-
 
     #If we reach a final state, get this score:
     state, final = game.is_final(state)
@@ -128,7 +97,7 @@ def alphabeta(state, depth, isMaxPlayer, alpha, beta):
 
         value = -99999
         value_actions = np.zeros(6)                    
-        for action in range(6): #6 actions from 0 to 5
+        for action in range(6): 
             if game.is_valid(state,action):
                 new_state = plan_a_turn(state, action)
                 value_from_MIN, _ = alphabeta(game.flip_board(new_state), depth-1, False, alpha, beta)
@@ -148,7 +117,7 @@ def alphabeta(state, depth, isMaxPlayer, alpha, beta):
     else: #isMinPlayer
         value = 99999
         value_actions = np.zeros(6)                    
-        for action in range(6): #6 actions from 0 to 5
+        for action in range(6): 
             if game.is_valid(state,action):
                 new_state = plan_a_turn(state, action)
                 value_from_MAX, _ = alphabeta(game.flip_board(new_state), depth-1, True, alpha, beta)
